@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Configure The MySQL</title>
+</head>
+<body>
+<form action="/datarating/" method="get">
+  <label for="user_id">User ID:</label><br>
+  <input type="text" id="user_id" name="user_id" value=""><br>
+  <input type="submit" value="Search">
+    </form>
+    <table border="1">
+        <tr>
+            <th>User ID</th>
+            <th>Movie ID</th>
+            <th>Rating</th>
+        </tr>
+        {% for getdata in Ratings %}
+        <tr>
+        <td>{{getdata.user_id}}</td>
+        <td>{{getdata.movie_id}}</td>
+        <td>{{getdata.rating}}</td>
+        </tr>
+{% endfor %}
+    </table>
+</body>
+</html>

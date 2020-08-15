@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Configure The MySQL</title>
+</head>
+<body>
+    <form action="/datamovie" method="get">
+  <label for="movie_id">Movie ID:</label><br>
+  <input type="text" id="movie_id" name="movie_id" value=""><br>
+  <input type="submit" value="Search">
+    </form>
+    <table border="1">
+        <tr>
+            <th>Movie ID</th>
+            <th>Title</th>
+            <th>Genre</th>
+        </tr>
+        {% for getdata in Movies%}
+        <tr>
+            <td>{{getdata.movie_id}}</td>
+            <td>{{getdata.title}}</td>
+            <td>{{getdata.genres}}</td>
+        </tr>
+{% endfor %}
+    </table>
+</body>
+</html>
